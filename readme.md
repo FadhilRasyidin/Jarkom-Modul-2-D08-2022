@@ -15,6 +15,7 @@ Kendala:
 
 # Laporan Resmi
 ## Topologi
+<img width="620" alt="image" src="https://user-images.githubusercontent.com/73109893/198057634-f58d1a5f-1718-40af-95d1-28e4d13a164e.png">
 ## Config
 
 - **Ostania**
