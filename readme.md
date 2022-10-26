@@ -130,7 +130,7 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
     cd ~
     ```
 
-- **Sisanya**
+- **Sisanya (SSS, Garden, Berlint, WISE)**
     
     ```
     echo 'nameserver 192.168.122.1' > /etc/resolv.conf
