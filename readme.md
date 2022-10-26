@@ -91,7 +91,7 @@ Kendala:
 
 ## Sebelum Memulai
 
-setiap node, kita inisiasi pada '.bashrc' menggunakan 'nano'
+setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
 
 - **Ostania**
     
