@@ -128,7 +128,7 @@ setiap node, kita inisiasi pada '.bashrc' menggunakan 'nano'
     cd ~
     ```
 
-- **Lainnya**
+- **Sisanya**
     
     ```
     echo 'nameserver 192.168.122.1' > /etc/resolv.conf
