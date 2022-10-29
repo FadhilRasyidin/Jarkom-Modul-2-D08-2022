@@ -156,16 +156,12 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
     ```
     apt-get update
     apt-get install nano -y
-    iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.178.0.0/16
+    iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.19.0.0/16
     ```
 
 - **Master & Slave**
     
     ```
-    # ~/.bashrc: executed by bash(1) for non-login shells.
-    # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-    # for examples
-    ...
     echo 'nameserver 192.168.122.1' > /etc/resolv.conf
     apt-get update
     apt-get install bind9 -y
@@ -174,10 +170,6 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
 - **Client**
 
     ```
-    # ~/.bashrc: executed by bash(1) for non-login shells.
-    # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-    # for examples
-    ...
     echo -e '
     nameserver 10.19.1.2
     nameserver 10.19.3.2
