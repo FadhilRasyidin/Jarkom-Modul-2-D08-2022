@@ -51,11 +51,23 @@ Kendala:
     - [Script](#script-8)
     - [Test](#test-9)
 - [Soal 12](#soal-12)
+    - [Script](#script-9)
+    - [Test](#test-10)
 - [Soal 13](#soal-13)
+    - [Script](#script-10)
+    - [Test](#test-11)
 - [Soal 14](#soal-14)
+    - [Script](#script-11)
+    - [Test](#test-12)
 - [Soal 15](#soal-15)
+    - [Script](#script-12)
+    - [Test](#test-13)
 - [Soal 16](#soal-16)
+    - [Script](#script-13)
+    - [Test](#test-14)
 - [Soal 17](#soal-17)
+    - [Script](#script-14)
+    - [Test](#test-15)
 
 
 ## Topologi
@@ -793,19 +805,302 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public`.
 # Soal 12
 > Tidak hanya itu, Loid juga ingin menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
 
+### Script
+
+Lakukan konfigurasi pada `/eden.wise.d08.com`. Lalu, tambahkan konfigurasi ErrorDocument agar ketika ada yang error akan diarahkan ke file `/error/404.html`.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no12.sh`
+- **Eden**
+    
+    ```
+    echo "<VirtualHost *:80>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/eden.wise.d08.com
+            ServerName eden.wise.d08.com
+            ServerAlias www.eden.wise.d08.com
+            ErrorDocument 404 /error/404.html
+            ErrorDocument 500 /error/404.html
+            ErrorDocument 502 /error/404.html
+            ErrorDocument 503 /error/404.html
+            ErrorDocument 504 /error/404.html
+            <Directory /var/www/eden.wise.d08.com/public>
+                    Options +Indexes
+            </Directory>
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+            <Directory /var/www/wise.d08.com>
+                    Options +FollowSymLinks -Multiviews
+                    AllowOverride All
+            </Directory>
+    </VirtualHost>" > /etc/apache2/sites-available/eden.wise.d08.com.conf
+    service apache2 restart
+    ```
+
+Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/lahkmn`.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no12.sh`
+- **SSS & Garden**
+    
+    ```
+    lynx http://www.eden.wise.d08.com/lahkmn
+    ``` 
+
+### Test
+
 # Soal 13
 > Loid juga meminta Franky untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset **www.eden.wise.yyy.com/public/js** menjadi **www.eden.wise.yyy.com/js**
+
+### Script
+
+Lakukan konfigurasi pada `/eden.wise.d08.com`. Lalu, tambahkan konfigurasi Alias, `Alias \"/js\" \"/var/www/eden.wise.d08.com/public/js\"`.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no13.sh`
+- **Eden**
+    
+    ```
+    echo "<VirtualHost *:80>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/eden.wise.d08.com
+            ServerName eden.wise.d08.com
+            ServerAlias www.eden.wise.d08.com
+            ErrorDocument 404 /error/404.html
+            ErrorDocument 500 /error/404.html
+            ErrorDocument 502 /error/404.html
+            ErrorDocument 503 /error/404.html
+            ErrorDocument 504 /error/404.html
+            <Directory /var/www/eden.wise.d08.com/public>
+                    Options +Indexes
+            </Directory>
+            Alias \"/js\" \"/var/www/eden.wise.d08.com/public/js\"
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+            <Directory /var/www/wise.d08.com>
+                    Options +FollowSymLinks -Multiviews
+                    AllowOverride All
+            </Directory>
+    </VirtualHost>
+    " > /etc/apache2/sites-available/eden.wise.d08.com.conf
+    service apache2 restart
+    ```
+
+Restart kemudian jalankan perintah `lynx http://www.eden.wise.d08.com/js` di Client.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no13.sh`
+- **SSS & Garden**
+    
+    ```
+    lynx http://www.eden.wise.d08.com/js
+    ```
+
+### Test
 
 # Soal 14
 > Loid meminta agar **www.strix.operation.wise.yyy.com** hanya bisa diakses dengan port 15000 dan port 15500 
 
+### Script
+
+Lakukan konfigurasi pada `/strix.operation.wise.d08.com`. Lalu, buat config baru general.mecha.e10.com-15000.conf, virtualHost baru yang berada di port 15000 dan 15500.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no14.sh`
+- **Eden**
+    
+    ```
+    echo "<VirtualHost *:15000>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/strix.operation.wise.d08.com
+            ServerName strix.operation.wise.d08.com
+            ServerAlias www.strix.operation.wise.d08.com
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+    <VirtualHost *:15500>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/strix.operation.wise.d08.com
+            ServerName strix.operation.wise.d08.com
+            ServerAlias www.strix.operation.wise.d08.com
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>" > /etc/apache2/sites-available/strix.operation.wise.d08.com.conf
+    a2ensite strix.operation.wise.d08.com
+    service apache2 restart
+    mkdir /var/www/strix.operation.wise.d08.com
+    cp -RT /var/www/strix.operation.wise/ /var/www/strix.operation.wise.d08.com/
+    echo "# If you just change the port or add more ports here, you will likely also
+    # have to change the VirtualHost statement in
+    # /etc/apache2/sites-enabled/000-default.conf
+    Listen 80
+    Listen 15000
+    Listen 15500
+    <IfModule ssl_module>
+            Listen 443
+    </IfModule>
+    <IfModule mod_gnutls.c>
+            Listen 443
+    </IfModule>" > /etc/apache2/ports.conf
+    service apache2 restart
+    ```
+
+Setelah itu, jalankan perintah `lynx www.strix.operation.wise.d08.com:15000`.
+
+> Script dibawah ini terdapat pada **root node SSS**, untuk menjalankannya bisa langsung dengan melakukan command `bash no14.sh`
+- **SSS**
+    
+    ```
+    lynx www.strix.operation.wise.d08.com:15000
+    ``` 
+
+Setelah itu, jalankan perintah `lynx www.strix.operation.wise.d08.com:15500`.
+
+> Script dibawah ini terdapat pada **root node Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no14.sh`
+- **Garden**
+    
+    ```
+    lynx www.strix.operation.wise.d08.com:15500
+    ``` 
+
+### Test
+
 # Soal 15
 > dengan autentikasi username Twilight dan password opStrix dan file di /var/www/strix.operation.wise.yyy 
+
+### Script
+
+Jalankan command `htpasswd -c -b /etc/apache2/.htpasswd Twilight opStrix`. Lalu, konfigurasi file `/strix.operation.wise.d08.com`.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no15.sh`
+- **Eden**
+    
+    ```
+    htpasswd -c -b /etc/apache2/.htpasswd Twilight opStrix
+    echo "<VirtualHost *:15000>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/strix.operation.wise.d08.com
+            ServerName strix.operation.wise.d08.com
+            ServerAlias www.strix.operation.wise.d08.com
+            <Directory \"/var/www/strix.operation.wise.d08.com\">
+                    AuthType Basic
+                    AuthName \"Restricted Content\"
+                    AuthUserFile /etc/apache2/.htpasswd
+                    Require valid-user
+            </Directory>
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+    <VirtualHost *:15500>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/strix.operation.wise.d08.com
+            ServerName strix.operation.wise.d08.com
+            ServerAlias www.strix.operation.wise.d08.com
+            <Directory \"/var/www/strix.operation.wise.d08.com\">
+                    AuthType Basic
+                    AuthName \"Restricted Content\"
+                    AuthUserFile /etc/apache2/.htpasswd
+                    Require valid-user
+            </Directory>
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>" > /etc/apache2/sites-available/strix.operation.wise.d08.com.conf
+    service apache2 restart
+    ```
+
+Setelah itu, jalankan perintah `lynx www.strix.operation.wise.d08.com:15500`.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no15.sh`
+- **SSS & Garden**
+    
+    ```
+    lynx www.strix.operation.wise.d08.com:15500
+    ``` 
+
+### Test
 
 # Soal 16
 > dan setiap kali mengakses IP Eden akan dialihkan secara otomatis ke **www.wise.yyy.com**
 
+### Script
+
+Lalukan konfigurasi file `/000-default.conf`. Lalu, lakukan `service apache2 restart`.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no16.sh`
+- **Eden**
+    
+    ```
+    echo "<VirtualHost *:80>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/html
+            RewriteEngine On
+            RewriteCond %{HTTP_HOST} !^wise.d08.com$
+            RewriteRule /.* http://wise.d08.com/ [R]
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+    service apache2 restart
+    ```
+
+Setelah itu, jalankan perintah `lynx 10.19.3.3`.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no16.sh`
+- **SSS & Garden**
+    
+    ```
+    lynx 10.19.3.3
+    ``` 
+
+### Test
+
 # Soal 17
 > Karena website **www.eden.wise.yyy.com** semakin banyak pengunjung dan banyak modifikasi sehingga banyak gambar-gambar yang random, maka Loid ingin mengubah request gambar yang memiliki substring “eden” akan diarahkan menuju eden.png. Bantulah Agent Twilight dan Organisasi WISE menjaga perdamaian! 
+
+### Script
+
+Lakukan konfigurasi file `/eden.wise.d08.com/.htaccess`. Lalu, konfigurasi file `/eden.wise.d08.com` dan lakukan restart service apache2 dengan `service apache2 restart`.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no17.sh`
+- **Eden**
+    
+    ```
+    echo "RewriteEngine On
+    RewriteCond %{REQUEST_URI} ^/public/images/(.*)eden(.*)
+    RewriteCond %{REQUEST_URI} !/public/images/eden.png
+    RewriteRule eden http://eden.wise.d08.com/public/images/eden.png$1 [L,R=301]" > /var/www/eden.wise.d08.com/.htaccess
+    echo "<VirtualHost *:80>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/eden.wise.d08.com
+            ServerName eden.wise.d08.com
+            ServerAlias www.eden.wise.d08.com
+            ErrorDocument 404 /error/404.html
+            ErrorDocument 500 /error/404.html
+            ErrorDocument 502 /error/404.html
+            ErrorDocument 503 /error/404.html
+            ErrorDocument 504 /error/404.html
+            <Directory /var/www/eden.wise.d08.com/public>
+                    Options +Indexes
+            </Directory>
+            Alias \"/js\" \"/var/www/eden.wise.d08.com/public/js\"
+            <Directory /var/www/eden.wise.d08.com>
+                    Options +FollowSymLinks -Multiviews
+                    AllowOverride All
+            </Directory>
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+            <Directory /var/www/wise.d08.com>
+                    Options +FollowSymLinks -Multiviews
+                    AllowOverride All
+            </Directory>
+    </VirtualHost>" > /etc/apache2/sites-available/eden.wise.d08.com.conf
+    a2enmod rewrite
+    service apache2 restart
+    ```
+
+Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public/images/not-eden.png`.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no17.sh`
+- **SSS & Garden**
+    
+    ```
+    lynx http://www.eden.wise.d08.com/public/images/not-eden.png
+    ``` 
+
+### Test
 
 ![image](https://user-images.githubusercontent.com/73109893/198837905-1ee039d2-96b6-4f4c-ae8b-a23926dbb642.png)
