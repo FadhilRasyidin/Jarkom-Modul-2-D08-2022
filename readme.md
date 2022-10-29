@@ -2,7 +2,7 @@
 
 - Mohammad Fadhil Rasyidin Parinduri // 5025201131
 - Marcelino Salim // 5025201026
-- Aisyah Nurhalimah // 5025201081 
+- Aisyah Nurhalimah // 5025201081 (juara harapan 1 basket dies natalis)
 
 ### Soal Shift
 
@@ -11,7 +11,7 @@
 Kendala:
 
 1. banyak tugas sedikit waktu (butuh introspeksi diri untuk memperbaiki manajemen waktu)
-2. hehe semangat ^-^
+2. hehe
 
 # Laporan Resmi
 ## Daftar Isi
@@ -169,7 +169,7 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
 # Soal 1
 > WISE akan dijadikan sebagai DNS Master, Berlint akan dijadikan DNS Slave, dan Eden akan digunakan sebagai Web Server. Terdapat 2 Client yaitu SSS, dan Garden. Semua node terhubung pada router Ostania, sehingga dapat mengakses internet 
 
-Setelah berhasil melakukan konfigurasi dan selesai menjalankan start command, akan dilakukan pengecekan internet untuk semua node dengan melakukan `ping google.com`
+Setelah berhasil melakukan konfigurasi, akan dilakukan pengecekan internet untuk semua node dengan melakukan `ping google.com`
 
 ![p2_2](https://user-images.githubusercontent.com/81240334/198823214-53bc659c-d7c6-4f4d-a3b7-2d9d75237149.jpeg)
 ![p2_1](https://user-images.githubusercontent.com/81240334/198823215-e2694b34-e29c-4d02-b970-e7653562fe8d.jpeg)
@@ -192,3 +192,36 @@ Setelah berhasil melakukan konfigurasi dan selesai menjalankan start command, ak
 
 # Soal 7
 > Untuk informasi yang lebih spesifik mengenai Operation Strix, buatlah subdomain melalui Berlint dengan akses **strix.operation.wise.yyy.com** dengan alias **www.strix.operation.wise.yyy.com** yang mengarah ke Eden
+
+# Soal 8
+> Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. 
+Pertama dengan webserver **www.wise.yyy.com**. Pertama, Loid membutuhkan webserver dengan DocumentRoot pada /var/www/wise.yyy.com 
+
+# Soal 9
+> Setelah itu, Loid juga membutuhkan agar url **www.wise.yyy.com/index.php/home** dapat menjadi menjadi **www.wise.yyy.com/home**
+
+# Soal 10
+> Setelah itu, pada subdomain **www.eden.wise.yyy.com**, Loid membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/eden.wise.yyy.com 
+
+# Soal 11
+> Pada folder /public, Loid ingin hanya dapat melakukan directory listing saja 
+
+# Soal 12
+> Tidak hanya itu, Loid juga ingin menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
+
+# Soal 13
+> Loid juga meminta Franky untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset **www.eden.wise.yyy.com/public/js** menjadi **www.eden.wise.yyy.com/js**
+
+# Soal 14
+> Loid meminta agar **www.strix.operation.wise.yyy.com** hanya bisa diakses dengan port 15000 dan port 15500 
+
+# Soal 15
+> dengan autentikasi username Twilight dan password opStrix dan file di /var/www/strix.operation.wise.yyy 
+
+# Soal 16
+> dan setiap kali mengakses IP Eden akan dialihkan secara otomatis ke **www.wise.yyy.com**
+
+# Soal 17
+> Karena website **www.eden.wise.yyy.com** semakin banyak pengunjung dan banyak modifikasi sehingga banyak gambar-gambar yang random, maka Loid ingin mengubah request gambar yang memiliki substring “eden” akan diarahkan menuju eden.png. Bantulah Agent Twilight dan Organisasi WISE menjaga perdamaian! 
+
+yeayy
