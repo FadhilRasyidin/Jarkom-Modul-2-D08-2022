@@ -834,6 +834,8 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855207-e0fa0cf1-6cf9-4eba-8739-bb84cc1e80e0.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855220-2d9d868b-e3dc-4c19-86ea-241530397acf.png">
 
 # Soal 12
 > Tidak hanya itu, Loid juga ingin menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
@@ -879,6 +881,8 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/lahkmn`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855279-20e4de62-6483-40a1-9cac-c6cfc49a610d.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855290-3637e6cd-e0dc-4970-a944-9c21c654dbd3.png">
 
 # Soal 13
 > Loid juga meminta Franky untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset **www.eden.wise.yyy.com/public/js** menjadi **www.eden.wise.yyy.com/js**
@@ -926,6 +930,8 @@ Restart kemudian jalankan perintah `lynx http://www.eden.wise.d08.com/js` di Cli
     ```
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855335-59cc5bd0-9fe2-4dac-aae8-bb645c680a7b.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855341-ac8ea0ed-3b37-4f39-a288-996ff22c433c.png">
 
 # Soal 14
 > Loid meminta agar **www.strix.operation.wise.yyy.com** hanya bisa diakses dengan port 15000 dan port 15500 
@@ -992,6 +998,8 @@ Setelah itu, jalankan perintah `lynx www.strix.operation.wise.d08.com:15500`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855398-d67af628-497a-42be-a351-ada6b8eba82e.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855402-98f9de0c-a951-4b15-8ac3-0e6a5059e8b4.png">
 
 # Soal 15
 > dengan autentikasi username Twilight dan password opStrix dan file di /var/www/strix.operation.wise.yyy 
