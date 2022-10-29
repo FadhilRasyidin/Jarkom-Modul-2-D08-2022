@@ -277,6 +277,8 @@ Kemudian pada node client (SSS & Garden), kita harus lakukan setting nameserver 
     ```
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198842259-76e9b11e-2603-4377-bee7-ccb63d36392e.png)
+![image](https://user-images.githubusercontent.com/73109893/198842267-24a29140-5cc5-4119-a223-a0d4aec45e25.png)
 
 # Soal 3
 > Setelah itu ia juga ingin membuat subdomain **eden.wise.yyy.com** dengan alias **www.eden.wise.yyy.com** yang diatur DNS-nya di WISE dan mengarah ke Eden 
@@ -323,6 +325,8 @@ Kemudian kita akan mengecek dengan melakukan test ping `ping eden.wise.d08.com -
     ``` 
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198842311-5f865816-1b4a-4a4b-ad31-d5ce827f8b73.png)
+![image](https://user-images.githubusercontent.com/73109893/198842320-51b1bf32-79aa-4e54-b2f2-10f71ea02bfd.png)
 
 # Soal 4
 > Buat juga reverse domain untuk domain utama 
