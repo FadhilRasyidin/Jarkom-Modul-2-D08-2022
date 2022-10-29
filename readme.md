@@ -2,7 +2,7 @@
 
 - Mohammad Fadhil Rasyidin Parinduri // 5025201131
 - Marcelino Salim // 5025201026
-- Aisyah Nurhalimah // 5025201081 (juara harapan 1 basket dies natalis)
+- Aisyah Nurhalimah // 5025201081 
 
 ### Soal Shift
 
@@ -11,9 +11,29 @@
 Kendala:
 
 1. banyak tugas sedikit waktu (butuh introspeksi diri untuk memperbaiki manajemen waktu)
-2. hehe
+2. hehe semangat ^-^
 
 # Laporan Resmi
+## Daftar Isi
+* [Soal 1](#soal-1)
+* [Soal 2](#soal-2)
+* [Soal 3](#soal-3)
+* [Soal 4](#soal-4)
+* [Soal 5](#soal-5)
+* [Soal 6](#soal-6)
+* [Soal 7](#soal-7)
+* [Soal 8](#soal-8)
+* [Soal 9](#soal-9)
+* [Soal 10](#soal-10)
+* [Soal 11](#soal-11)
+* [Soal 12](#soal-12)
+* [Soal 13](#soal-13)
+* [Soal 14](#soal-14)
+* [Soal 15](#soal-15)
+* [Soal 16](#soal-16)
+* [Soal 17](#soal-17)
+
+
 ## Topologi
 <img width="620" alt="image" src="https://user-images.githubusercontent.com/73109893/198057634-f58d1a5f-1718-40af-95d1-28e4d13a164e.png">
 
@@ -145,3 +165,30 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
     echo -e "\n\nPHP Ver:"
     php -v
     ```
+
+# Soal 1
+> WISE akan dijadikan sebagai DNS Master, Berlint akan dijadikan DNS Slave, dan Eden akan digunakan sebagai Web Server. Terdapat 2 Client yaitu SSS, dan Garden. Semua node terhubung pada router Ostania, sehingga dapat mengakses internet 
+
+Setelah berhasil melakukan konfigurasi dan selesai menjalankan start command, akan dilakukan pengecekan internet untuk semua node dengan melakukan `ping google.com`
+
+![p2_2](https://user-images.githubusercontent.com/81240334/198823214-53bc659c-d7c6-4f4d-a3b7-2d9d75237149.jpeg)
+![p2_1](https://user-images.githubusercontent.com/81240334/198823215-e2694b34-e29c-4d02-b970-e7653562fe8d.jpeg)
+![Wise ping](https://user-images.githubusercontent.com/81240334/198823210-45e41db3-19d2-41ef-a44b-5a632b809a14.jpg)
+
+# Soal 2
+> Untuk mempermudah mendapatkan informasi mengenai misi dari Handler, buat website utama dengan akses **wise.yyy.com** dengan alias **www.wise.yyy.com** pada folder wise 
+
+# Soal 3
+> Setelah itu ia juga ingin membuat subdomain **eden.wise.yyy.com** dengan alias **www.eden.wise.yyy.com** yang diatur DNS-nya di WISE dan mengarah ke Eden 
+
+# Soal 4
+> Buat juga reverse domain untuk domain utama 
+
+# Soal 5
+> Agar dapat tetap dihubungi jika server WISE bermasalah, buatlah juga Berlint sebagai DNS Slave untuk domain utama
+
+# Soal 6
+> Karena banyak informasi dari Handler, buat subdomain yang khusus untuk operation yaitu **operation.wise.yyy.com** dengan alias **www.operation.wise.yyy.com** yang didelegasikan dari WISE ke Berlint dengan IP menuju ke Eden dalam folder operation 
+
+# Soal 7
+> Untuk informasi yang lebih spesifik mengenai Operation Strix, buatlah subdomain melalui Berlint dengan akses **strix.operation.wise.yyy.com** dengan alias **www.strix.operation.wise.yyy.com** yang mengarah ke Eden
