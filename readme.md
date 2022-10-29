@@ -692,6 +692,9 @@ Setelah itu, jalankan perintah `lynx eden.wise.d08.com`.
     ``` 
 
 ### Test
+<img width="280" alt="image" src="https://user-images.githubusercontent.com/73109893/198855025-c87e8fb9-6e5d-4be8-a4ee-dcc0635d47dc.png">
+<img width="279" alt="image" src="https://user-images.githubusercontent.com/73109893/198855031-8d7b64f8-6f52-4bea-9c8d-a976bb9f7cfa.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855021-890d8d91-59e6-4d97-833f-d19e33ca7c1d.png">
 
 # Soal 9
 > Setelah itu, Loid juga membutuhkan agar url **www.wise.yyy.com/index.php/home** dapat menjadi menjadi **www.wise.yyy.com/home**
@@ -727,6 +730,9 @@ Tambahkan `Alias "/home" "/var/www/wise.d08.com/index.php/home"` pada conf agar 
     ``` 
 
 ### Test
+<img width="270" alt="image" src="https://user-images.githubusercontent.com/73109893/198855041-f71b7895-114f-4bc2-8fc9-fc6be1514ff2.png">
+<img width="269" alt="image" src="https://user-images.githubusercontent.com/73109893/198855049-71d905d0-4f13-4a0c-8ace-2207c0b78944.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855071-65a678a0-5f05-48da-9598-140de37b8949.png">
 
 # Soal 10
 > Setelah itu, pada subdomain **www.eden.wise.yyy.com**, Loid membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/eden.wise.yyy.com 
@@ -786,6 +792,8 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855140-8103b48c-993d-4eeb-a9c1-13ec6d2bcdb8.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855151-68ff0ef2-e994-433d-a81b-9b2a98d797c0.png">
 
 # Soal 11
 > Pada folder /public, Loid ingin hanya dapat melakukan directory listing saja 
@@ -826,6 +834,8 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855207-e0fa0cf1-6cf9-4eba-8739-bb84cc1e80e0.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855220-2d9d868b-e3dc-4c19-86ea-241530397acf.png">
 
 # Soal 12
 > Tidak hanya itu, Loid juga ingin menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
@@ -871,6 +881,8 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/lahkmn`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855279-20e4de62-6483-40a1-9cac-c6cfc49a610d.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855290-3637e6cd-e0dc-4970-a944-9c21c654dbd3.png">
 
 # Soal 13
 > Loid juga meminta Franky untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset **www.eden.wise.yyy.com/public/js** menjadi **www.eden.wise.yyy.com/js**
@@ -918,6 +930,8 @@ Restart kemudian jalankan perintah `lynx http://www.eden.wise.d08.com/js` di Cli
     ```
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855335-59cc5bd0-9fe2-4dac-aae8-bb645c680a7b.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855341-ac8ea0ed-3b37-4f39-a288-996ff22c433c.png">
 
 # Soal 14
 > Loid meminta agar **www.strix.operation.wise.yyy.com** hanya bisa diakses dengan port 15000 dan port 15500 
@@ -984,6 +998,8 @@ Setelah itu, jalankan perintah `lynx www.strix.operation.wise.d08.com:15500`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855398-d67af628-497a-42be-a351-ada6b8eba82e.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855402-98f9de0c-a951-4b15-8ac3-0e6a5059e8b4.png">
 
 # Soal 15
 > dengan autentikasi username Twilight dan password opStrix dan file di /var/www/strix.operation.wise.yyy 
