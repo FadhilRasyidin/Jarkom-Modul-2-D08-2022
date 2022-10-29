@@ -808,3 +808,4 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public`.
 # Soal 17
 > Karena website **www.eden.wise.yyy.com** semakin banyak pengunjung dan banyak modifikasi sehingga banyak gambar-gambar yang random, maka Loid ingin mengubah request gambar yang memiliki substring “eden” akan diarahkan menuju eden.png. Bantulah Agent Twilight dan Organisasi WISE menjaga perdamaian! 
 
+![image](https://user-images.githubusercontent.com/73109893/198837905-1ee039d2-96b6-4f4c-ae8b-a23926dbb642.png)
