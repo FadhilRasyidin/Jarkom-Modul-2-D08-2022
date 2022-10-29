@@ -692,6 +692,9 @@ Setelah itu, jalankan perintah `lynx wise.d08.com`.
     ``` 
 
 ### Test
+<img width="280" alt="image" src="https://user-images.githubusercontent.com/73109893/198855025-c87e8fb9-6e5d-4be8-a4ee-dcc0635d47dc.png">
+<img width="279" alt="image" src="https://user-images.githubusercontent.com/73109893/198855031-8d7b64f8-6f52-4bea-9c8d-a976bb9f7cfa.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855021-890d8d91-59e6-4d97-833f-d19e33ca7c1d.png">
 
 # Soal 9
 > Setelah itu, Loid juga membutuhkan agar url **www.wise.yyy.com/index.php/home** dapat menjadi menjadi **www.wise.yyy.com/home**
@@ -727,6 +730,9 @@ Tambahkan `Alias "/home" "/var/www/wise.d08.com/index.php/home"` pada conf agar 
     ``` 
 
 ### Test
+<img width="270" alt="image" src="https://user-images.githubusercontent.com/73109893/198855041-f71b7895-114f-4bc2-8fc9-fc6be1514ff2.png">
+<img width="269" alt="image" src="https://user-images.githubusercontent.com/73109893/198855049-71d905d0-4f13-4a0c-8ace-2207c0b78944.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855071-65a678a0-5f05-48da-9598-140de37b8949.png">
 
 # Soal 10
 > Setelah itu, pada subdomain **www.eden.wise.yyy.com**, Loid membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/eden.wise.yyy.com 
@@ -786,6 +792,8 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855140-8103b48c-993d-4eeb-a9c1-13ec6d2bcdb8.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855151-68ff0ef2-e994-433d-a81b-9b2a98d797c0.png">
 
 # Soal 11
 > Pada folder /public, Loid ingin hanya dapat melakukan directory listing saja 
