@@ -159,22 +159,47 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
     iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.178.0.0/16
     ```
 
-- **Eden**
+- **Master & Slave**
     
     ```
+    # ~/.bashrc: executed by bash(1) for non-login shells.
+    # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+    # for examples
+    ...
     echo 'nameserver 192.168.122.1' > /etc/resolv.conf
     apt-get update
-    apt-get install nano -y
-    apt-get install dnsutils -y
-    apt-get install lynx -y
-    apt-get install apache2 -y
     apt-get install bind9 -y
-    apt-get install libapache2-mod-php7.0 -y
+    ```
+
+- **Client**
+
+    ```
+    # ~/.bashrc: executed by bash(1) for non-login shells.
+    # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+    # for examples
+    ...
+    echo -e '
+    nameserver 10.19.1.2
+    nameserver 10.19.3.2
+    nameserver 192.168.122.1
+    ' > /etc/resolv.conf
+    apt-get update
+    apt-get install dnsutils
+    apt-get install lynx
+    ```
+
+- **Web Server**
+    
+    ...
+    echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+    apt-get update
+    apt-get install apache2
+    apt-get install libapache2-mod-php7.0
     service apache2 start
     apt-get install wget -y
     apt-get install unzip -y
-    apt-get install php -y
-    echo -e "\n\nPHP Ver:"
+    apt-get install php
+    echo -e "\n\nPHP Version:"
     php -v
     cd /var/www
     wget 'https://github.com/FadhilRasyidin/Jarkom-Modul-2-D08-2022/raw/main/resources/wise.zip'
@@ -183,23 +208,9 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
     unzip wise.zip
     unzip eden.wise.zip
     unzip strix.operation.wise.zip
-    cd ~
-    ```
-
-- **Sisanya (SSS, Garden, Berlint, WISE)**
-    
-    ```
-    echo 'nameserver 192.168.122.1' > /etc/resolv.conf
-    apt-get update
-    apt-get install nano -y
-    apt-get install dnsutils -y
-    apt-get install lynx -y
-    apt-get install apache2 -y
-    apt-get install bind9 -y
-    service apache2 start
-    apt-get install php -y
-    echo -e "\n\nPHP Ver:"
-    php -v
+    rm wise.zip
+    rm eden.wise.zip
+    rm strix.operation.wise.zip
     ```
 
 # Soal 1
