@@ -682,7 +682,7 @@ Kemudian, edit file `wise.d08.com.conf` lalu tambahkan ServerName dan ServerAlia
     service apache2 restart
     ```
 
-Setelah itu, jalankan perintah `lynx wise.d08.com`.
+Setelah itu, jalankan perintah `lynx eden.wise.d08.com`.
 
 > Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no8.sh`
 - **SSS & Garden**
