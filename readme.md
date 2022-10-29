@@ -33,6 +33,8 @@ Kendala:
     - [Script](#script-2)
     - [Test](#test-3)
 - [Soal 6](#soal-6)
+    - [Script](#script-3)
+    - [Test](#test-4)
 - [Soal 7](#soal-7)
 - [Soal 8](#soal-8)
 - [Soal 9](#soal-9)
@@ -196,7 +198,7 @@ Setelah berhasil melakukan konfigurasi, akan dilakukan pengecekan internet untuk
     echo -e '
     zone "wise.d08.com" {
             type master;
-            file "/etc/bind/wise/wise.b11.com";
+            file "/etc/bind/wise/wise.d08.com";
     };
      ' > /etc/bind/named.conf.local
     mkdir /etc/bind/wise
@@ -225,7 +227,7 @@ Kemudian pada node client (SSS & Garden), kita harus lakukan setting nameserver 
 - **SSS & Garden**
     
     ```
-    echo "TEST ALIAS (CNAME) (alias dari wise.B11.com)"
+    echo "TEST ALIAS (CNAME) (alias dari wise.d08.com)"
     host -t CNAME www.wise.d08.com
     echo "TEST ARAH PING www.wise.d08.com (mengarah ke host IP WISE)"
     ping www.wise.d08.com -c 3
@@ -273,7 +275,7 @@ Kemudian kita akan mengecek dengan melakukan test ping `ping eden.wise.d08.com -
     ```
     echo "TEST PING SUBDOMAIN (mengarah ke host IP Eden)"
     ping eden.wise.d08.com -c 3
-    echo "TEST ALIAS (CNAME) (alias dari  eden.wise.B11.com)"
+    echo "TEST ALIAS (CNAME) (alias dari  eden.wise.d08.com)"
     host -t CNAME www.eden.wise.d08.com
     ``` 
 
@@ -321,7 +323,7 @@ Kemudian kita akan mengecek reverse domain dengan melakukan `host -t PTR 10.19.1
 - **SSS & Garden**
     
     ```
-    echo "TES REVERSE DOMAIN (point to wise.b11.com.)"
+    echo "TES REVERSE DOMAIN (point to wise.d08.com.)"
     host -t PTR 10.19.1.2
     ``` 
 
@@ -365,7 +367,7 @@ Setelah selesai maka kita harus merestart bind9 dengan command `service bind9 re
     zone "wise.d08.com" {
         type slave;
         masters { 10.19.1.2; }; // Masukan IP WISE tanpa tanda petik
-        file "/var/lib/bind/wise.b11.com";
+        file "/var/lib/bind/wise.d08.com";
     };
      ' > /etc/bind/named.conf.local
     service bind9 restart
@@ -394,7 +396,140 @@ Kemudian pada node client (SSS & Garden), kita harus menambahkan nameserver Berl
 ### Test
 
 # Soal 6
-> Karena banyak informasi dari Handler, buat subdomain yang khusus untuk operation yaitu **operation.wise.yyy.com** dengan alias **www.operation.wise.yyy.com** yang didelegasikan dari WISE ke Berlint dengan IP menuju ke Eden dalam folder operation 
+> Karena banyak informasi dari Handler, buat subdomain yang khusus untuk operation yaitu **operation.wise.yyy.com** dengan alias **www.operation.wise.yyy.com** yang didelegasikan dari WISE ke Berlint dengan IP menuju ke Eden dalam folder operation
+
+### Script
+
+Setelah selesai maka kita harus merestart bind9 dengan command `service bind9 restart`.
+
+> Script dibawah ini terdapat pada **root node WISE**, untuk menjalankannya bisa langsung dengan melakukan command `bash no6.sh`
+- **WISE**
+    
+    ```
+    echo -e '
+    ;
+    ; BIND data file for local loopback interface
+    ;
+    $TTL    604800
+    @       IN      SOA     wise.d08.com. root.wise.d08.com. (
+                                  2         ; Serial
+                             604800         ; Refresh
+                              86400         ; Retry
+                            2419200         ; Expire
+                             604800 )       ; Negative Cache TTL
+    ;
+    @               	IN      NS      wise.d08.com.
+    @               	IN      A       192.178.3.2             ; IP WISE
+    www             	IN      CNAME   wise.d08.com.
+    eden            	IN      A       192.178.2.3             ; IP Eden
+    www.eden	        IN      CNAME   eden.wise.d08.com.      ; IP Eden
+    ns1			IN	A	192.178.2.2		; IP Berlint
+    operation		IN	NS	ns1
+    ' > /etc/bind/wise/wise.d08.com
+    echo -e '
+    zone "wise.d08.com" {
+            type master;
+    	notify yes;
+            also-notify { 192.178.2.2; }; // Masukan IP Berlint tanpa tanda petik
+            allow-transfer { 192.178.2.2; }; // Masukan IP Berlint tanpa tanda petik
+    	file "/etc/bind/wise/wise.d08.com";
+    };
+    zone "3.178.192.in-addr.arpa" {
+        type master;
+        file "/etc/bind/wise/3.178.192.in-addr.arpa";
+    };
+    ' > /etc/bind/named.conf.local
+    echo -e '
+    options {
+            directory "/var/cache/bind";
+            // If there is a firewall between you and nameservers you want
+            // to talk to, you may need to fix the firewall to allow multiple
+            // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+               forwarders {
+                    192.168.122.1;
+               };
+            //========================================================================
+            // If BIND logs error messages about the root key being expired,
+            // you will need to update your keys.  See https://www.isc.org/bind-keys
+            //========================================================================
+            //dnssec-validation auto;
+            allow-query{any;};
+            auth-nxdomain no;    # conform to RFC1035
+            listen-on-v6 { any; };
+    };
+    ' > /etc/bind/named.conf.options
+    service bind9 restart
+    ```
+
+Setelah selesai maka kita harus merestart bind9 dengan command `service bind9 restart`.
+
+> Script dibawah ini terdapat pada **root node Berlint**, untuk menjalankannya bisa langsung dengan melakukan command `bash no6.sh`
+- **Berlint**
+    
+    ```
+    echo -e '
+    options {
+            directory "/var/cache/bind";
+            // If there is a firewall between you and nameservers you want
+            // to talk to, you may need to fix the firewall to allow multiple
+            // ports to talk.  See http://www.kb.cert.org/vuls/id/800113
+            // forwarders {
+            //      0.0.0.0;
+            // };
+            //========================================================================
+            // If BIND logs error messages about the root key being expired,
+            // you will need to update your keys.  See https://www.isc.org/bind-keys
+            //========================================================================
+            //dnssec-validation auto;
+            allow-query{any;};
+            auth-nxdomain no;    # conform to RFC1035
+            listen-on-v6 { any; };
+    };
+    ' > /etc/bind/named.conf.options
+    echo -e '
+    zone "wise.d08.com" {
+        type slave;
+        masters { 192.178.3.2; }; // Masukan IP WISE tanpa tanda petik
+        file "/var/lib/bind/wise.d08.com";
+    };
+    zone "operation.wise.d08.com" {
+            type master;
+            file "/etc/bind/operation/operation.wise.d08.com";
+    };
+    ' > /etc/bind/named.conf.local
+    // Buat folder operation
+    mkdir /etc/bind/operation
+    echo -e '
+    $TTL    604800
+    @       IN      SOA     operation.wise.d08.com. root.operation.wise.d08.com. (
+                                  2         ; Serial
+                             604800         ; Refresh
+                              86400         ; Retry
+                            2419200         ; Expire
+                             604800 )       ; Negative Cache TTL
+    ;
+    @       	IN      NS          operation.wise.d08.com.
+    @       	IN      A           192.178.2.3			; IP Eden
+    www       	IN      CNAME       operation.wise.d08.com.
+    ' > /etc/bind/operation/operation.wise.d08.com
+    service bind9 restart
+    ```
+
+Kemudian kita akan mengecek dengan melakukan test ping `ping operation.wise.d08.com -c 3` dan test cname `host -t CNAME www.operation.wise.d08.com`.
+
+Pada Berlint masukkan apa yang ada di file /etc/bind/named.conf.options yang sudah meng-comment bagian `dnssec-validation auto` dan tambahkan `allow-query{any;};` dan edit file /etc/bind/named.conf.local ke file `no.6.sh`.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no6.sh`
+- **SSS & Garden**
+    
+    ```
+    echo "TEST PING DELEGASI SUBDOMAIN (mengarah ke host IP Eden)"
+    ping operation.wise.d08.com -c 3
+    echo "TEST ALIAS (CNAME) (alias dari operation.wise.d08.com)"
+    host -t CNAME www.operation.wise.d08.com
+    ``` 
+
+### Test
 
 # Soal 7
 > Untuk informasi yang lebih spesifik mengenai Operation Strix, buatlah subdomain melalui Berlint dengan akses **strix.operation.wise.yyy.com** dengan alias **www.strix.operation.wise.yyy.com** yang mengarah ke Eden
