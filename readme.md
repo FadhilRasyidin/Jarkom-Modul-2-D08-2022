@@ -375,6 +375,8 @@ Kemudian kita akan mengecek reverse domain dengan melakukan `host -t PTR 10.19.1
     ``` 
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198842878-6e4faace-a5e1-476a-8d1e-35f48bf4a28d.png)
+![image](https://user-images.githubusercontent.com/73109893/198842882-61da6c12-1c95-446e-8b4f-224a1dc262a7.png)
 
 # Soal 5
 > Agar dapat tetap dihubungi jika server WISE bermasalah, buatlah juga Berlint sebagai DNS Slave untuk domain utama
