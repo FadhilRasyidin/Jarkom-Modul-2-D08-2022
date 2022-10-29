@@ -277,6 +277,8 @@ Kemudian pada node client (SSS & Garden), kita harus lakukan setting nameserver 
     ```
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198841390-9f42bdde-2a41-40ec-92d7-1915b0398abf.png)
+![image](https://user-images.githubusercontent.com/73109893/198841397-5d01065e-8588-4e15-aa8f-539739854a60.png)
 
 # Soal 3
 > Setelah itu ia juga ingin membuat subdomain **eden.wise.yyy.com** dengan alias **www.eden.wise.yyy.com** yang diatur DNS-nya di WISE dan mengarah ke Eden 
