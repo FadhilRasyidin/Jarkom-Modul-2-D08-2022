@@ -1054,6 +1054,11 @@ Setelah itu, jalankan perintah `lynx www.strix.operation.wise.d08.com:15500`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855902-f5d249ea-c3b6-4c3f-971b-10d726b5807c.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855906-247203cf-89bc-4d5f-9ebd-e89c5244b9af.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855911-3029a137-0d67-42d5-986c-54822cf0d6e1.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855914-73ac34d6-1337-49e8-a516-353dacfa3996.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855927-5e347669-e68e-4ac4-bbc9-506ac341cc66.png">
 
 # Soal 16
 > dan setiap kali mengakses IP Eden akan dialihkan secara otomatis ke **www.wise.yyy.com**
@@ -1088,6 +1093,8 @@ Setelah itu, jalankan perintah `lynx 10.19.3.3`.
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855945-5f887b27-3a75-4f36-b423-321401421447.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855950-c3cfd115-d55b-4422-9f66-f83392d47f90.png">
 
 # Soal 17
 > Karena website **www.eden.wise.yyy.com** semakin banyak pengunjung dan banyak modifikasi sehingga banyak gambar-gambar yang random, maka Loid ingin mengubah request gambar yang memiliki substring “eden” akan diarahkan menuju eden.png. Bantulah Agent Twilight dan Organisasi WISE menjaga perdamaian! 
@@ -1143,5 +1150,9 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public/images/
     ``` 
 
 ### Test
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855963-258813e0-6a68-446b-9afe-15cc74ecc978.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855967-f1136194-3047-4630-887b-f5da71aada84.png">
+<img width="960" alt="image" src="https://user-images.githubusercontent.com/73109893/198855973-7bdd245c-1db5-425e-a144-bcb018def9b7.png">
+
 
 ![image](https://user-images.githubusercontent.com/73109893/198837905-1ee039d2-96b6-4f4c-ae8b-a23926dbb642.png)
