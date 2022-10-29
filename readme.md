@@ -443,6 +443,11 @@ Kemudian pada node client (SSS & Garden), kita harus menambahkan nameserver Berl
     ``` 
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198844068-9b80e1e1-61ce-4d42-8bd1-113e43d3a520.png)
+![image](https://user-images.githubusercontent.com/73109893/198844072-35e6ca8a-05b4-4f30-82fc-45c8a72bd6b8.png)
+![image](https://user-images.githubusercontent.com/73109893/198844077-84da448d-b4cd-4fdc-a1f2-bec542931260.png)
+![image](https://user-images.githubusercontent.com/73109893/198844081-a1574076-f22a-4d19-bc47-fc38c166a23a.png)
+![image](https://user-images.githubusercontent.com/73109893/198844089-2e0e9fcb-7851-48e4-bc88-a998c62b7084.png)
 
 # Soal 6
 > Karena banyak informasi dari Handler, buat subdomain yang khusus untuk operation yaitu **operation.wise.yyy.com** dengan alias **www.operation.wise.yyy.com** yang didelegasikan dari WISE ke Berlint dengan IP menuju ke Eden dalam folder operation
@@ -579,6 +584,10 @@ Pada Berlint masukkan apa yang ada di file /etc/bind/named.conf.options yang sud
     ``` 
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198844105-43f77a27-050c-4062-b6ad-70d3cba056de.png)
+![image](https://user-images.githubusercontent.com/73109893/198844108-9d3479c9-addb-4afe-996c-5b710fb76244.png)
+![image](https://user-images.githubusercontent.com/73109893/198844129-a59d1147-9ed7-41ce-944b-34979afa6d6a.png)
+![image](https://user-images.githubusercontent.com/73109893/198844133-7429b20d-777a-4243-afc7-87a8a02c38d9.png)
 
 # Soal 7
 > Untuk informasi yang lebih spesifik mengenai Operation Strix, buatlah subdomain melalui Berlint dengan akses **strix.operation.wise.yyy.com** dengan alias **www.strix.operation.wise.yyy.com** yang mengarah ke Eden
@@ -622,6 +631,8 @@ Kemudian kita akan mengecek dengan melakukan test ping `ping strix.operation.wis
     ``` 
 
 ### Test
+![image](https://user-images.githubusercontent.com/73109893/198844141-e9a20e5c-ad07-46a4-8da8-b8290c114afe.png)
+![image](https://user-images.githubusercontent.com/73109893/198844148-cff4714f-28db-492e-9def-fd2b40844dd4.png)
 
 # Soal 8
 > Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. 
