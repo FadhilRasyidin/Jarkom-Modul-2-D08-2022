@@ -418,7 +418,7 @@ Setelah selesai maka kita harus merestart bind9 dengan command `service bind9 re
 
 Pada server WISE kita akan mematikan service bind9 dengan command `service bind9 stop`
 
-> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no5test.sh`
+> Script dibawah ini terdapat pada **root WISE**, untuk menjalankannya bisa langsung dengan melakukan command `bash no5test.sh`
 - **WISE**
     
     ```
