@@ -224,9 +224,11 @@ setiap node, kita inisiasi pada `.bashrc` menggunakan `nano`
 
 Setelah berhasil melakukan konfigurasi, akan dilakukan pengecekan internet untuk semua node dengan melakukan `ping google.com`
 
-![p2_2](https://user-images.githubusercontent.com/81240334/198823214-53bc659c-d7c6-4f4d-a3b7-2d9d75237149.jpeg)
-![p2_1](https://user-images.githubusercontent.com/81240334/198823215-e2694b34-e29c-4d02-b970-e7653562fe8d.jpeg)
-![Wise ping](https://user-images.githubusercontent.com/81240334/198823210-45e41db3-19d2-41ef-a44b-5a632b809a14.jpg)
+<img width="622" alt="image" src="https://user-images.githubusercontent.com/73109893/198839687-3d8750dd-2620-422a-88a4-c8c8f5cf1db2.png">
+<img width="646" alt="image" src="https://user-images.githubusercontent.com/73109893/198839699-472b4345-d9c9-4529-bb23-936926c9555c.png">
+<img width="621" alt="image" src="https://user-images.githubusercontent.com/73109893/198839709-a9345570-e99a-4531-9e67-ad8a09fdb4a0.png">
+<img width="636" alt="image" src="https://user-images.githubusercontent.com/73109893/198839728-4aa04563-fd4c-4e55-b2f4-883f1f447a6a.png">
+<img width="613" alt="image" src="https://user-images.githubusercontent.com/73109893/198839742-a8699dc7-e891-4513-bccf-84701d244aef.png">
 
 # Soal 2
 > Untuk mempermudah mendapatkan informasi mengenai misi dari Handler, buat website utama dengan akses **wise.yyy.com** dengan alias **www.wise.yyy.com** pada folder wise 
