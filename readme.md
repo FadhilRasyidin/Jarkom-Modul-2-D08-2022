@@ -632,6 +632,7 @@ Kemudian kita akan mengecek dengan melakukan test ping `ping strix.operation.wis
 
 ### Test
 ![image](https://user-images.githubusercontent.com/73109893/198844141-e9a20e5c-ad07-46a4-8da8-b8290c114afe.png)
+![image](https://user-images.githubusercontent.com/73109893/198844289-baa763a1-eec4-49f2-af18-07faa23d9507.png)
 ![image](https://user-images.githubusercontent.com/73109893/198844148-cff4714f-28db-492e-9def-fd2b40844dd4.png)
 
 # Soal 8
