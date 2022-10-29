@@ -48,6 +48,8 @@ Kendala:
     - [Script](#script-7)
     - [Test](#test-8)
 - [Soal 11](#soal-11)
+    - [Script](#script-8)
+    - [Test](#test-9)
 - [Soal 12](#soal-12)
 - [Soal 13](#soal-13)
 - [Soal 14](#soal-14)
@@ -750,6 +752,43 @@ Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com`.
 
 # Soal 11
 > Pada folder /public, Loid ingin hanya dapat melakukan directory listing saja 
+
+### Script
+
+Lakukan konfigurasi pada `/eden.wise.d08.com`. Lalu, tambahkan Options +Indexes pada direktori yang ingin di directory list.
+
+> Script dibawah ini terdapat pada **root node Eden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no11.sh`
+- **Eden**
+    
+    ```
+    echo "<VirtualHost *:80>
+            ServerAdmin webmaster@localhost
+            DocumentRoot /var/www/eden.wise.d08.com
+            ServerName eden.wise.d08.com
+            ServerAlias www.eden.wise.d08.com
+            <Directory /var/www/eden.wise.d08.com/public>
+                    Options +Indexes
+            </Directory>
+            ErrorLog \${APACHE_LOG_DIR}/error.log
+            CustomLog \${APACHE_LOG_DIR}/access.log combined
+            <Directory /var/www/wise.d08.com>
+                    Options +FollowSymLinks -Multiviews
+                    AllowOverride All
+            </Directory>
+    </VirtualHost>" > /etc/apache2/sites-available/eden.wise.d08.com.conf
+    service apache2 restart
+    ```
+
+Setelah itu, jalankan perintah `lynx http://www.eden.wise.d08.com/public`.
+
+> Script dibawah ini terdapat pada **root node SSS & Garden**, untuk menjalankannya bisa langsung dengan melakukan command `bash no11.sh`
+- **SSS & Garden**
+    
+    ```
+    lynx http://www.eden.wise.d08.com/public
+    ``` 
+
+### Test
 
 # Soal 12
 > Tidak hanya itu, Loid juga ingin menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
